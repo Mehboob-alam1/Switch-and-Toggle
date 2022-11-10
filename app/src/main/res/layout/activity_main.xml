@@ -1,55 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
-    <ToggleButton
-        android:id="@+id/toggle1"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text"
-        android:textOff="@string/text_off"
-        android:textOn="@string/text_on" />
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
 
-    <ToggleButton
-        android:id="@+id/toggle2"
-        android:layout_width="wrap_content"
+
+        <EditText
+android:id="@+id/etEmail"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/teal_700" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="@string/text"
-        android:textOff="@string/text_off"
-        android:textOn="@string/text_on" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_marginTop="100dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnSubmit"
-        android:layout_centerHorizontal="true"
-        android:textOn="@string/text_on"
-        android:textOff="@string/text_off"
-        android:text="Notifications"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
 
 
+        <EditText
+android:id="@+id/etPassword"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
+            android:hint="Enter your password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/teal_700" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:background="@color/teal_700"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        android:layout_below="@id/toggle2"
-        android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content"
-        android:text="Submit"/>
-
-
-
-
-</RelativeLayout>
+ <Button
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+  android:text="Login"
+  android:id="@+id/btnLogin"/>
+</LinearLayout>
