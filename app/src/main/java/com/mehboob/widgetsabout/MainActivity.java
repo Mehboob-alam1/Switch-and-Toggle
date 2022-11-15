@@ -1,60 +1,109 @@
 package com.mehboob.widgetsabout;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
-import android.view.LayoutInflater;
+
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.Switch;
+import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
+
 
 import com.mehboob.widgetsabout.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
-ActivityMainBinding binding;
-private static final String TAG="MainActivity";
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    ActivityMainBinding binding;
+    private static final String TAG = "MainActivity";
+    AlertDialog.Builder builder;
+    ImageView iv;
+    ProgressDialog dialog;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
+        dialog = new ProgressDialog(MainActivity.this);
 
-        binding.btnLogin.setOnClickListener(view -> {
-
-            if (binding.etEmail.getText().toString().isEmpty()){
-                binding.etEmail.setError("Email required");
-            }else if (binding.etPassword.getText().toString().isEmpty()){
-                binding.etPassword.setError("Password required");
-            }else if (binding.etEmail.getText().toString().equals("mehboobcodes@gmail.com") && binding.etPassword.getText().toString().equals("123456")){
-                Toast.makeText(this, "Successfully login", Toast.LENGTH_SHORT).show();
-            }else  if (!binding.etEmail.getText().toString().equals("mehboobcodes@gmail.com")){
-                Log.d(TAG,"Wrong email");
-                binding.etEmail.setError("Wrong email");
-            }else  if (!binding.etPassword.getText().toString().equals("123456")){
-                Log.d(TAG,"Wrong password");
-                binding.etPassword.setError("Wrong password");
-            }
+        dialog.setTitle("Sign In");
+        dialog.setMessage("Please wait.....");
+        // dialog.setCancelable(false);
 
 
+        builder = new AlertDialog.Builder(this);
+        iv = findViewById(R.id.imageView);
 
+        iv.setOnClickListener(view -> {
 
+            onBackPressed();
         });
 
+        binding.btnLogin.setOnClickListener(this);
 
+//        binding.btnLogin.setOnClickListener(view -> {
+//            dialog.show();
+//
+//
+//            startActivity( new Intent(MainActivity.this,MainActivity2.class));
+//
+////            final Handler handler = new Handler();
+////            handler.postDelayed(new Runnable() {
+////                @Override
+////                public void run() {
+////                    dialog.dismiss();
+////                }
+////            }, 5000);
+////
+//
+//        });
 
 
     }
 
+    @Override
+    public void onBackPressed() {
 
 
+        builder.setMessage("Are you sure you want to exit!")
+                .setTitle("Exit")
 
+                .setPositiveButton("Awa La", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finishAffinity();
+                    }
+                }).setNegativeButton("Nay La", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        dialogInterface.dismiss();
+                    }
+                }).setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "Neutral mode", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        startActivity(new Intent(MainActivity.this,MainActivity2.class));
+
+    }
 }
