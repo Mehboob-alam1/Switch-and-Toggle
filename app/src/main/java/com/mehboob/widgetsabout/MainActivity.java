@@ -8,11 +8,10 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 
@@ -24,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     AlertDialog.Builder builder;
     ImageView iv;
     ProgressDialog dialog;
+    RatingBar ratingBar;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
+
         dialog = new ProgressDialog(MainActivity.this);
 
         dialog.setTitle("Sign In");
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        startActivity(new Intent(MainActivity.this,MainActivity2.class));
+        startActivity(new Intent(MainActivity.this, MainActivity2.class));
 
     }
 }
