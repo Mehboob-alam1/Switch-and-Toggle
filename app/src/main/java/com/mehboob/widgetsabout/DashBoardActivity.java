@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class DashBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         gridView=findViewById(R.id.grid_view);
+
 
         gridAdapter= new GridAdapter(this,images,title);
 
