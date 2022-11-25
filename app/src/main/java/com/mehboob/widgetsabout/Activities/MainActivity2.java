@@ -1,4 +1,4 @@
-package com.mehboob.widgetsabout;
+package com.mehboob.widgetsabout.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -7,7 +7,6 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Rating;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,6 +16,9 @@ import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.mehboob.widgetsabout.Adapters.CustomAdapter;
+import com.mehboob.widgetsabout.R;
 
 public class MainActivity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener, View.OnClickListener {
     private Spinner spinner;

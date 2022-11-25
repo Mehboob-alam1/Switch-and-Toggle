@@ -1,4 +1,4 @@
-package com.mehboob.widgetsabout;
+package com.mehboob.widgetsabout.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 
+import com.mehboob.widgetsabout.R;
 import com.mehboob.widgetsabout.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -50,22 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         binding.btnLogin.setOnClickListener(this);
 
-//        binding.btnLogin.setOnClickListener(view -> {
-//            dialog.show();
-//
-//
-//            startActivity( new Intent(MainActivity.this,MainActivity2.class));
-//
-////            final Handler handler = new Handler();
-////            handler.postDelayed(new Runnable() {
-////                @Override
-////                public void run() {
-////                    dialog.dismiss();
-////                }
-////            }, 5000);
-////
-//
-//        });
+
 
 
     }

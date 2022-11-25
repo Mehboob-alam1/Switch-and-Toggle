@@ -1,4 +1,4 @@
-package com.mehboob.widgetsabout;
+package com.mehboob.widgetsabout.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.mehboob.widgetsabout.R;
 
 public class GridAdapter extends BaseAdapter {
     private Context context;

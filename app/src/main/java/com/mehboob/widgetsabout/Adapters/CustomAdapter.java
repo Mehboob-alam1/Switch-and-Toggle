@@ -1,4 +1,4 @@
-package com.mehboob.widgetsabout;
+package com.mehboob.widgetsabout.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.mehboob.widgetsabout.R;
 
 public class CustomAdapter extends BaseAdapter {
 
